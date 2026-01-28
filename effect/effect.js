@@ -8,10 +8,10 @@ app.use(express.json());
 
 let todos = [];
 
-/* READ */
+
 app.get("/todos", (req, res) => res.json(todos));
 
-/* CREATE */
+
 app.post("/todos", (req, res) => {
   const todo = {
     id: uuid(),
@@ -23,7 +23,6 @@ app.post("/todos", (req, res) => {
   res.status(201).json(todo);
 });
 
-/* UPDATE */
 app.put("/todos/:id", (req, res) => {
   todos = todos.map(t =>
     t.id === req.params.id ? { ...t, ...req.body } : t
@@ -31,7 +30,7 @@ app.put("/todos/:id", (req, res) => {
   res.sendStatus(200);
 });
 
-/* DELETE */
+
 app.delete("/todos/:id", (req, res) => {
   todos = todos.filter(t => t.id !== req.params.id);
   res.sendStatus(204);
