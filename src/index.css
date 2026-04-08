@@ -1,0 +1,48 @@
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌟 Анимация fade-in для CharacterDetail */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s forwards;
+}
+
+/* 🌟 Плавное появление текста градиентом */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* 🌟 Кнопки */
+button {
+  transition: all 0.3s ease;
+}
+
+/* 🌟 Scrollbar стили (если нужно для списка персонажей) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #4ade80; /* зеленый */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #1f2937; /* темно-серый */
+}
+
+/* 🌟 Дополнительные эффекты при hover */
+.group:hover img {
+  transition: transform 0.3s ease-in-out;
+}
